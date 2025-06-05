@@ -11,12 +11,13 @@ class data: # 7 pierwszych warosci odpowiada tym z 1 prezentacji
 
         # this sets up matrix with a dynamic size
         d =[]
-        for k in range(self.y):
+        for k in range(self.y+1):
             d.append(0.0)
         dummy =[]
         dummy.append(d)
-        self.profit_matrix = [dummy[0][:] for _ in range(self.x)]   # x / y  dummy
-        self.opt_matrix = [dummy[0][:] for _ in range(self.x)]      # x / y  dummy
+        self.profit_matrix = [dummy[0][:] for _ in range(self.x+1)]   # x / y  dummy
+        self.opt_matrix_tmp = [dummy[0][:] for _ in range(self.x+1)]   # x / y  dummy
+        self.opt_matrix = [dummy[0][:] for _ in range(self.x+1)]      # x / y  dummy
         
         self.income_total = 0.0
         self.buy_cost_total = 0.0
