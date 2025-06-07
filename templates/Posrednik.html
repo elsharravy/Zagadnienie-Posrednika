@@ -1,0 +1,81 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<!-- Names explanation:  dc1 - demand customer 1 , ss1 - supply supplier 1, t11 - transport supplier 1 -> customer 1, pps1 - purchase price supplier 1, spc1 - selling price customer 1   -->
+    <table> 
+        <tr>
+            <td>  </td>
+            <td> </td>
+            <td> Customer 1</td>
+            <td> Customer 2</td>
+            <td> Customer 3</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> ------------- Demand</td>
+            <td> <input type="number" id="dc1" name="dc1" >    </td>
+            <td> <input type="number" id="dc2" name="dc2" >   </td>
+            <td> <input type="number" id="dc3" name="dc3" >   </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>Supply </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> Purchase price</td>
+        </tr>
+        <tr>
+            <td> Supplier 1 </td>
+            <td> <input type="number" id="ss1" name="ss1" > </td>
+            <td> <input type="number" id="t11" name="t11" > </td>
+            <td> <input type="number" id="t12" name="t12" > </td>
+            <td> <input type="number" id="t13" name="t13" ></td>
+            <td><input type="number" id="pps1" name="pps1" > </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td>- </td>
+            <td>- </td>
+            <td> -</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> Supplier 2 </td>
+            <td> <input type="number" id="ss2" name="ss2" > </td>
+            <td> <input type="number" id="t21" name="t21" > </td>
+            <td> <input type="number" id="t22" name="t22" > </td>
+            <td> <input type="number" id="t23" name="t23" ></td>
+            <td><input type="number" id="pps2" name="pps2" > </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>Supply </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> Purchase price</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> ------------- Selling Price</td>
+            <td> <input type="number" id="spc1" name="spc1" >    </td>
+            <td> <input type="number" id="spc2" name="spc2" >   </td>
+            <td> <input type="number" id="spc3" name="spc3" >   </td>
+            <td> </td>
+        </tr>
+    </table>
+
+            <form method="post" action="/generate">
+                <button type="submit">Solve</button>
+            </form>
+
+
+</body>
+</html>
