@@ -35,6 +35,9 @@ def solvePosrednik():
     zyski_jednostkowe = [ pm[0][0:2],pm[1][0:2],pm[2][0:2] ]
     transport_optymalny = [ ot[0][0:2],ot[1][0:2],ot[2][0:2] ]
     dochod = dat.profit_total
+    koszt_kupno = dat.buy_cost_total
+    koszt_transport = dat.transport_cost_total
+    przychod = dat.income_total
 
     print( "----------Dane obliczone:" )
     print("Zysk jednostkowy: " + str(zyski_jednostkowe))
@@ -44,7 +47,11 @@ def solvePosrednik():
     return render_template('Posrednik.html',
     zyski_jednostkowe=zyski_jednostkowe,
     transport_optymalny=transport_optymalny,
-    dochod=dochod)
+    dochod=dochod,
+    przychod=przychod,
+    koszt_kupno=koszt_kupno,
+    koszt_transport=koszt_transport,
+    form_data=request.form)
 
 
 if __name__ == '__main__':

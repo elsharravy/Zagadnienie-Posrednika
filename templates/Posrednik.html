@@ -1,27 +1,35 @@
 <html>
 <head>
 
+<title> Zagadnienie Pośrednika </title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Bundle JS (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
 
-   <form method="post" action="/generate">
+   <form method="post" action="/generate" class="p-4 mx-auto" style="max-width: 1100px;">
 
 <!-- Names explanation:  dc1 - demand customer 1 , ss1 - supply supplier 1, t11 - transport supplier 1 -> customer 1, pps1 - purchase price supplier 1, spc1 - selling price customer 1   -->
     <table> 
         <tr>
             <td>  </td>
             <td> </td>
-            <td> Customer 1</td>
-            <td> Customer 2</td>
-            <td> Customer 3</td>
+            <td> <b>Customer 1</b></td>
+            <td> <b>Customer 2</b></td>
+            <td> <b>Customer 3</b></td>
             <td> </td>
         </tr>
         <tr>
             <td> </td>
             <td> ------------- Demand</td>
-            <td> <input type="number" id="dc1" name="dc1" >    </td>
-            <td> <input type="number" id="dc2" name="dc2" >   </td>
-            <td> <input type="number" id="dc3" name="dc3" >   </td>
+            <td> <input type="number" id="dc1" name="dc1" class="form-control" value="{{ form_data.get('dc1', '') }}" min="0" required>    </td>
+            <td> <input type="number" id="dc2" name="dc2" class="form-control" value="{{ form_data.get('dc2', '') }}" min="0" required>   </td>
+            <td> <input type="number" id="dc3" name="dc3" class="form-control" value="{{ form_data.get('dc3', '') }}" min="0" required>   </td>
             <td> </td>
         </tr>
         <tr>
@@ -33,12 +41,12 @@
             <td> Purchase price</td>
         </tr>
         <tr>
-            <td> Supplier 1 </td>
-            <td> <input type="number" id="ss1" name="ss1" > </td>
-            <td> <input type="number" id="t11" name="t11" > </td>
-            <td> <input type="number" id="t12" name="t12" > </td>
-            <td> <input type="number" id="t13" name="t13" ></td>
-            <td><input type="number" id="pps1" name="pps1" > </td>
+            <td> <b>Supplier 1</b> </td>
+            <td> <input type="number" id="ss1" name="ss1" class="form-control" value="{{ form_data.get('ss1', '') }}" min="0" required> </td>
+            <td> <input type="number" style="background-color: yellow;" id="t11" name="t11" class="form-control" value="{{ form_data.get('t11', '') }}" min="0" required> </td>
+            <td> <input type="number" style="background-color: yellow;" id="t12" name="t12" class="form-control" value="{{ form_data.get('t12', '') }}" min="0" required> </td>
+            <td> <input type="number" style="background-color: yellow;" id="t13" name="t13" class="form-control" value="{{ form_data.get('t13', '') }}" min="0" required></td>
+            <td><input type="number" id="pps1" name="pps1" class="form-control" value="{{ form_data.get('pps1', '') }}" min="0" required> </td>
         </tr>
         <tr>
             <td> </td>
@@ -49,12 +57,12 @@
             <td> </td>
         </tr>
         <tr>
-            <td> Supplier 2 </td>
-            <td> <input type="number" id="ss2" name="ss2" > </td>
-            <td> <input type="number" id="t21" name="t21" > </td>
-            <td> <input type="number" id="t22" name="t22" > </td>
-            <td> <input type="number" id="t23" name="t23" > </td>
-            <td><input type="number" id="pps2" name="pps2"> </td>
+            <td> <b>Supplier 2</b> </td>
+            <td> <input type="number" id="ss2" name="ss2" class="form-control" value="{{ form_data.get('ss2', '') }}"min="0" required> </td>
+            <td> <input type="number" style="background-color: yellow;" id="t21" name="t21" class="form-control" value="{{ form_data.get('t21', '') }}"min="0" required> </td>
+            <td> <input type="number" style="background-color: yellow;" id="t22" name="t22" class="form-control" value="{{ form_data.get('t22', '') }}"min="0" required> </td>
+            <td> <input type="number" style="background-color: yellow;" id="t23" name="t23" class="form-control" value="{{ form_data.get('t23', '') }}"min="0" required> </td>
+            <td><input type="number" id="pps2" name="pps2" class="form-control" value="{{ form_data.get('pps2', '') }}"min="0" required > </td>
         </tr>
         <tr>
             <td> </td>
@@ -67,42 +75,45 @@
         <tr>
             <td> </td>
             <td> ------------- Selling Price</td>
-            <td> <input type="number" id="spc1" name="spc1" >   </td>
-            <td> <input type="number" id="spc2" name="spc2" >   </td>
-            <td> <input type="number" id="spc3" name="spc3" >   </td>
+            <td> <input type="number" id="spc1" name="spc1" class="form-control" value="{{ form_data.get('spc1', '') }}"min="0" required>   </td>
+            <td> <input type="number" id="spc2" name="spc2" class="form-control" value="{{ form_data.get('spc2', '') }}"min="0" required>   </td>
+            <td> <input type="number" id="spc3" name="spc3" class="form-control" value="{{ form_data.get('spc3', '') }}"min="0" required>   </td>
             <td> </td>
         </tr>
     </table>
 
          
-                <button type="submit">Solve</button>
+                <button type="submit" class="btn btn-primary mt-3" >Solve</button>
             </form>
 
-
+  <div class="text-center">
 
 {% if zyski_jednostkowe %}
 
-    Zyski jednostkowe
+    <h4 class="fw-bold">Zyski Jednostkowe</h4>
+    <br>
 
-    <table>
-        <tr>
-            <td>{{ zyski_jednostkowe[0][0] }}</td>
-            <td>{{ zyski_jednostkowe[1][0] }}</td>
-            <td>{{ zyski_jednostkowe[2][0] }}</td>
-        </tr>
-        <tr>
-            <td>{{ zyski_jednostkowe[0][1] }}</td>
-            <td>{{ zyski_jednostkowe[1][1] }}</td>
-            <td>{{ zyski_jednostkowe[2][1] }}</td>
-        </tr>       
+    <table class="table table-bordered table-striped table-hover mx-auto d-table" style="max-width: 400px;">
+      <tr>
+        <td>{{ zyski_jednostkowe[0][0] }}</td>
+        <td>{{ zyski_jednostkowe[1][0] }}</td>
+        <td>{{ zyski_jednostkowe[2][0] }}</td>
+      </tr>
+      <tr>
+        <td>{{ zyski_jednostkowe[0][1] }}</td>
+        <td>{{ zyski_jednostkowe[1][1] }}</td>
+        <td>{{ zyski_jednostkowe[2][1] }}</td>
+      </tr>
     </table>
+
 {% endif %}
 
 {% if transport_optymalny %}
 
-    Transport optymalny
+    <h4 class="fw-bold">Transport Optymalny</h4>
+    <br>
 
-    <table>
+    <table class="table table-bordered table-striped table-hover mx-auto d-table" style="max-width: 400px;">
         <tr>
             <td>{{ transport_optymalny[0][0] }}</td>
             <td>{{ transport_optymalny[1][0] }}</td>
@@ -116,11 +127,24 @@
     </table>
 {% endif %}
 
-Total Cost:
-Total Income:
 {% if dochod %}
-    Income : {{dochod}}
+        <table class="table table-bordered table-striped table-hover mx-auto d-table" style="max-width: 400px;">
+        <tr>
+            <td><b>Total cost</b></td>
+            <td>{{ koszt_transport }} + {{ koszt_kupno }}</td>
+        </tr>
+        <tr>
+            <td><b>Total Income</b></td>
+            <td>{{ przychod }}</td>
+        </tr>       
+        <tr>
+            <td><b>Profit</b></td>
+            <td>{{ dochod }}</td>
+        </tr>  
+    </table>
 {% endif %}
+
+  </div>
 
 </body>
 </html>
