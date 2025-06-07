@@ -37,6 +37,7 @@ def solvePosrednik():
     dochod = dat.profit_total
     koszt_kupno = dat.buy_cost_total
     koszt_transport = dat.transport_cost_total
+    koszt_total = koszt_kupno + koszt_transport
     przychod = dat.income_total
 
     print( "----------Dane obliczone:" )
@@ -51,6 +52,7 @@ def solvePosrednik():
     przychod=przychod,
     koszt_kupno=koszt_kupno,
     koszt_transport=koszt_transport,
+    koszt_total=koszt_total,
     form_data=request.form)
 
 
