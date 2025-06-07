@@ -80,5 +80,47 @@
 
 
 
+{% if zyski_jednostkowe %}
+
+    Zyski jednostkowe
+
+    <table>
+        <tr>
+            <td>{{ zyski_jednostkowe[0][0] }}</td>
+            <td>{{ zyski_jednostkowe[1][0] }}</td>
+            <td>{{ zyski_jednostkowe[2][0] }}</td>
+        </tr>
+        <tr>
+            <td>{{ zyski_jednostkowe[0][1] }}</td>
+            <td>{{ zyski_jednostkowe[1][1] }}</td>
+            <td>{{ zyski_jednostkowe[2][1] }}</td>
+        </tr>       
+    </table>
+{% endif %}
+
+{% if transport_optymalny %}
+
+    Transport optymalny
+
+    <table>
+        <tr>
+            <td>{{ transport_optymalny[0][0] }}</td>
+            <td>{{ transport_optymalny[1][0] }}</td>
+            <td>{{ transport_optymalny[2][0] }}</td>
+        </tr>
+        <tr>
+            <td>{{ transport_optymalny[0][1] }}</td>
+            <td>{{ transport_optymalny[1][1] }}</td>
+            <td>{{ transport_optymalny[2][1] }}</td>
+        </tr>       
+    </table>
+{% endif %}
+
+Total Cost:
+Total Income:
+{% if dochod %}
+    Income : {{dochod}}
+{% endif %}
+
 </body>
 </html>

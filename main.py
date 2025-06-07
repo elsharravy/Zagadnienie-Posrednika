@@ -41,7 +41,10 @@ def solvePosrednik():
     print("Transport optymalny: " + str(transport_optymalny))
     print("Dochód: " + str(dochod))
 
-    return render_template('Posrednik.html')
+    return render_template('Posrednik.html',
+    zyski_jednostkowe=zyski_jednostkowe,
+    transport_optymalny=transport_optymalny,
+    dochod=dochod)
 
 
 if __name__ == '__main__':
