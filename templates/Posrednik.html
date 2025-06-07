@@ -4,6 +4,8 @@
 </head>
 <body>
 
+   <form method="post" action="/generate">
+
 <!-- Names explanation:  dc1 - demand customer 1 , ss1 - supply supplier 1, t11 - transport supplier 1 -> customer 1, pps1 - purchase price supplier 1, spc1 - selling price customer 1   -->
     <table> 
         <tr>
@@ -51,8 +53,8 @@
             <td> <input type="number" id="ss2" name="ss2" > </td>
             <td> <input type="number" id="t21" name="t21" > </td>
             <td> <input type="number" id="t22" name="t22" > </td>
-            <td> <input type="number" id="t23" name="t23" ></td>
-            <td><input type="number" id="pps2" name="pps2" > </td>
+            <td> <input type="number" id="t23" name="t23" > </td>
+            <td><input type="number" id="pps2" name="pps2"> </td>
         </tr>
         <tr>
             <td> </td>
@@ -65,16 +67,17 @@
         <tr>
             <td> </td>
             <td> ------------- Selling Price</td>
-            <td> <input type="number" id="spc1" name="spc1" >    </td>
+            <td> <input type="number" id="spc1" name="spc1" >   </td>
             <td> <input type="number" id="spc2" name="spc2" >   </td>
             <td> <input type="number" id="spc3" name="spc3" >   </td>
             <td> </td>
         </tr>
     </table>
 
-            <form method="post" action="/generate">
+         
                 <button type="submit">Solve</button>
             </form>
+
 
 
 </body>

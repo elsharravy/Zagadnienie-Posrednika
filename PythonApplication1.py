@@ -39,7 +39,6 @@ sell = [18,16,15]  #x
 buy = [7,8]#y
 cost_matrix = [[4,8],[7,10],[2,4]]   # x / y
 
-
 dat = data.data(popyt,podaz,sell,buy,cost_matrix,x,y)
 
 dat = calculator.calculator.calculator_enter(dat)
